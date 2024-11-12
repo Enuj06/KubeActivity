@@ -6,7 +6,8 @@ labels:
 app: nginx 
 spec: 
 type: LoadBalancer   
-ports: - port: 80 
+ports: 
+- port: 80 
 targetPort: 80 
 selector: 
 app: nginx --- 
@@ -28,7 +29,7 @@ app: nginx
 spec: 
 initContainers: - name: init-html 
 image: curlimages/curl 
-command: ["sh", "-c", "curl -o /usr/share/nginx/html/index.html https://raw.githubusercontent.com/Enuj06/KubeActivity/main/index.html"] 
+command: ["sh", "-c", "curl -o /usr/share/nginx/html/index.html https://raw.githubusercontent.com/Enuj06/KubeActivity/main/index.html"]
 volumeMounts: - name: html-volume 
 mountPath: /usr/share/nginx/html 
 containers: - name: nginx 
