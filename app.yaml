@@ -27,7 +27,7 @@ metadata:
 labels: 
 app: nginx 
 spec: 
-initContainers: 
+initContainers:
 - name: init-html 
 image: curlimages/curl 
 command: ["sh", "-c", "curl -o /usr/share/nginx/html/index.html https://raw.githubusercontent.com/Enuj06/KubeActivity/main/index.html"]
